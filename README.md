@@ -1,6 +1,6 @@
 # PSSD
 
-Diffusion Generative Modeling for Spatially Resolved Gene Expression Inference from Histology Images.
+PSSD: Progressive Spatial-Semantic Decoupling for Flow-Based Gene Expression Prediction from Histology Images
 
 ## Project Structure
 
