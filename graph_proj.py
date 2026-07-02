@@ -78,7 +78,7 @@ class GeneGraphProjection(nn.Module):
         
     def _build_gene_graph(self, go_obo_path: str) -> Tuple[torch.Tensor, torch.Tensor]:
         """构建基因相似性图"""
-        cache_path = "/home/zcy/PSSD-main/hest1k_datasets/DLPFC/gene_graph_cache_hvg.pkl"  # 可以改成你想要的路径
+        cache_path = "./hest1k_datasets/DLPFC/gene_graph_cache_hvg.pkl"  # 可以改成你想要的路径
 
         # 1. 如果缓存存在，优先读取
         if os.path.exists(cache_path):
@@ -166,7 +166,7 @@ class GeneGraphProjection(nn.Module):
         
         return similarity_matrix
     
-    def _get_gene_go_annotations(self, gene_names: List[str], cache_path: str = "/home/zcy/PSSD-main/hest1k_datasets/DLPFC/gene_go_cache_hvg.pkl") -> Dict[str, List[str]]:
+    def _get_gene_go_annotations(self, gene_names: List[str], cache_path: str = "./hest1k_datasets/DLPFC/gene_go_cache_hvg.pkl") -> Dict[str, List[str]]:
         """获取基因的GO注释"""
         if os.path.exists(cache_path):
             print(f"Loading cached GO annotations from {cache_path}")

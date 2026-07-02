@@ -620,9 +620,9 @@ if __name__ == "__main__":
     parser.add_argument("--slide_out", type=str, default="NCBI770", help="Test slide ID. Multiple slides separated by comma.") 
     parser.add_argument("--folder_list_filename", type=str, default="all_slide_lst.txt", help="A txt file listing file names for all training and testing slides in the dataset")
     parser.add_argument("--gene_list_filename", type=str, default="selected_gene_list_heg.txt", help="Selected gene list")
-    parser.add_argument("--gene_embedding_file", type=str, default="/home/zcy/PSSD-main/hest1k_datasets/gene2vec_dim_200_iter_9_w2v.txt", help="Path to gene embedding txt file")
+    parser.add_argument("--gene_embedding_file", type=str, default="./hest1k_datasets/gene2vec_dim_200_iter_9_w2v.txt", help="Path to gene embedding txt file")
     parser.add_argument("--gene_embedding_dim", type=int, default=200, help="Dimension of gene embeddings")
-    parser.add_argument("--go_obo_path", type=str, default="/home/zcy/PSSD-main/hest1k_datasets/go-basic.obo", help="Path to GO ontology OBO file")
+    parser.add_argument("--go_obo_path", type=str, default="./hest1k_datasets/go-basic.obo", help="Path to GO ontology OBO file")
     parser.add_argument("--num_aug_ratio", type=int, default=4, help="Image augmentation ratio (int)")
     
     # model related arguments

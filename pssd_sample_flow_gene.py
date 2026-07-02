@@ -3,8 +3,7 @@ torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
 from torch.utils.data import DataLoader, Dataset
 import sys
-sys.path.append("/home/zcy/PSSD-main")
-from PSSD.models_fm_gene import PSSDFM_models
+from models_fm_gene import PSSDFM_models
 import argparse
 import pandas as pd
 import numpy as np
@@ -164,9 +163,9 @@ if __name__ == "__main__":
     # test slide & gene list
     parser.add_argument("--slide_out", type=str, default="MISC1", help="Test slide ID")
     parser.add_argument("--gene_list_filename", type=str, default="selected_gene_list_hvg.txt")
-    parser.add_argument("--gene_embedding_file", type=str, default="/home/zcy/PSSD-main/hest1k_datasets/gene2vec_dim_200_iter_9_w2v.txt", help="Path to gene embedding txt file")
+    parser.add_argument("--gene_embedding_file", type=str, default="./hest1k_datasets/gene2vec_dim_200_iter_9_w2v.txt", help="Path to gene embedding txt file")
     parser.add_argument("--gene_embedding_dim", type=int, default=200, help="Dimension of gene embeddings")
-    parser.add_argument("--go_obo_path", type=str, default="/home/zcy/PSSD-main/hest1k_datasets/go-basic.obo", help="Path to GO ontology OBO file")
+    parser.add_argument("--go_obo_path", type=str, default="./hest1k_datasets/go-basic.obo", help="Path to GO ontology OBO file")
     
     # sampling parameter
     parser.add_argument("--ode_method", type=str, default="heun", choices=["euler", "midpoint", "rk4", "heun"], help="ODE solver method to use")
@@ -175,9 +174,9 @@ if __name__ == "__main__":
     parser.add_argument("--sampling_batch_size", type=int, default=2000, help="Batch size when sampling. Reduce if GPU memory is limited")
     parser.add_argument("--num_sampling_steps", type=int, default=100, help="Number of steps for ODE sampler")
     
-    parser.add_argument("--save_path", type=str, default="/home/zcy/PSSD-main/DLPFC_PSSD_hvg_results/runs/000/samples/") # TODO set to path like: ./PRAD_results/runs/000/samples/
-    parser.add_argument("--ckpt", type=str, default="/home/zcy/PSSD-main/DLPFC_PSSD_hvg_results/runs/000/checkpoints/0200000.pt") # TODO set to ckpt path like: ./PRAD_results/runs/000/checkpoints/0300000.pt
-    parser.add_argument("--data_path", type=str, default="/home/zcy/PSSD-main/hest1k_datasets/DLPFC/")
+    parser.add_argument("--save_path", type=str, default="./results/DLPFC_PSSD_hvg_results/runs/000/samples/") # TODO set to path like: ./PRAD_results/runs/000/samples/
+    parser.add_argument("--ckpt", type=str, default="./results/DLPFC_PSSD_hvg_results/runs/000/checkpoints/0200000.pt") # TODO set to ckpt path like: ./PRAD_results/runs/000/checkpoints/0300000.pt
+    parser.add_argument("--data_path", type=str, default="./hest1k_datasets/DLPFC/")
     
     parser.add_argument("--device", type=str, default="cuda:3")
     
